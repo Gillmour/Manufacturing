@@ -1,0 +1,110 @@
+body {
+    font-family: sans-serif, helvetica, arial;
+}
+
+.container {
+    border: solid 1px red;
+    width: 100%;
+} 
+
+*{
+    margin: 0; 
+    padding: 0; 
+}
+.boxes {
+	
+	background: #eee;
+	float: left;
+	width: 45%;
+	margin: 1%;
+	padding: 1%;
+}
+
+
+.footer {
+	background: none;
+	float: left;	
+}
+
+/*
+
+
+h4 {
+	color: #fff;
+	position: left;
+}
+
+footer {
+    display: block;
+}
+
+p {
+    color: #8800ff;
+    font-family: sans-serif;
+    font-size: 100%;
+}
+
+#ex {
+    margin: 0px;
+    padding: 10px;
+    text-align: left;
+    width: 220px;
+    height: 10px;
+    position: inherit;
+    border: 6px double #809bad;
+    color: #000;
+    font-size: small;
+}
+*/
+#php {
+    line-height: 10px;
+    margin: 0px;
+    padding-bottom: 3px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    border: 1px solid black;
+    color: #000;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th {
+    border: 1px solid red;
+    font-size: x-small;
+    width: 80%;
+
+}
+table td, table th {
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid white;
+    font:  18px Georgia, serif;
+    background-color:black;
+    color: white;
+}
+/*
+#top {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    background-color: black;
+	text-decoration: lime;
+	font: italic bold 12px/30px Georgia, serif;
+}
+
+#imput {
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+	font-size: 16px;
+	color: white;
+}
+
+*/

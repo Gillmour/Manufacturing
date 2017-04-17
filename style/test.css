@@ -1,0 +1,183 @@
+body {
+    font-family: sans-serif;	
+    width: 99%;
+    height: 99%;
+    margin-top: 1px;
+    font-size: 12px;
+    background-image: url(../img/galaxy1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #ccc;
+}
+p {
+    color: red;
+    text-align: center;
+    margin: inherit; 
+}
+/* ----- HEADER ----- */
+
+#imput {
+    color: white;
+    font-size: 50px;
+    font: sans-serif oblique small-caps bold;
+}
+input {
+    padding: 5px;
+    font-size: inherit;
+}
+select {
+    padding: 5px;
+    font-size: inherit;
+}
+input [type="text"]{
+    display: block;
+    border: 2px solid blue;
+    background: #faf6d9;
+}
+
+.span {
+    color: #002966;
+    font-family: serif;
+    font-style: italic;
+    font-size: 20px;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+#title {
+    color: #000;
+    font-size: 20px;
+    font: sans-serif oblique small-caps bold;
+    margin: none;
+}
+
+#header {
+    width: 99%;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid red;
+}
+
+/* FAUX LAYOUT WRAPPER */
+
+
+
+#wrapper {
+    width: 99%;
+    height: 99%;
+    background-color: transparent; 
+    overflow: auto; /* USE FIREFOX GUYS! WE ONLY NEED THIS LINE BECAUSE INTERNET EXPLODER ISN'T READING CODE PROPERLY */
+    margin-top: 5px;
+    /* display: inline-block; */
+
+}
+
+/* ----- NAVIGATION ----- */
+
+
+
+#navigation {
+    width: 30%;
+    min-height: 790px; /* for modern browsers */
+    height: auto !important; /* for modern browsers */
+    height: 500px; /* for IE5.x and IE6 */
+    background-color: transparent;
+    border: 1px solid red;
+    margin: 5px 5px 5px 0px;
+    padding-right: 30px;
+    float: left;
+
+}
+
+/* ----- MAIN CONTENT ----- */
+
+
+
+#content {
+    /* margin-left: 210px; */
+    width: 60%;
+    padding-left: 40px;
+    min-height: 790px; /* for modern browsers */
+    height: auto; /* !important; for modern browsers */
+    /* height: 500px; /* for IE5.x and IE6 */
+    background-color: transparent;
+    border: 1px solid red;
+    margin: 5px 5px 5px 5px;
+    float: right;
+    /* position: relative; */
+
+
+}
+
+/* ----- FOOTER ----- */
+
+
+
+#footer {
+    margin-top: 1px;
+    width: 30%;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid red;
+    background-image: url(../img/footer.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: static;
+    float: left;
+}
+
+#tableNavi{
+    border: 1px solid #003d4d;
+    width: 130px;
+    font-size: 10px;
+    color: antiquewhite;
+}
+
+table {
+    text-align: center;
+    padding: 5px 5px;
+    margin: 5px;
+    /* width: 100%;*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    font:  18px Georgia, serif;
+    font-weight: bold;
+    background-color: transparent;
+    color: #003d4d;
+}
+td {
+    text-align: center;
+    padding: 1px 6px 1px 6px;
+    margin-left: 5px;
+    margin-right: 5px;
+    -webkit-box-sizing: border-box;
+    /* box-sizing: border-box;*/
+    border-left: 1px dotted #000;
+    border-bottom: 1px dotted #000;
+}
+tr {
+    text-align: center;
+    padding: 1px;
+    -webkit-box-sizing: border-box;
+    /* box-sizing: border-box;*/
+    border: none;
+}
+th {
+    text-align: center;
+    font:  22px Georgia serif;
+    background-color: #a38647;
+    color: white;
+}
+
+table > tbody > tr:nth-child(odd){
+    background: rgba(244,244,244,0.8);
+}
+
+table > tbody > tr:hover,
+table > thead > tr:hover,
+table > tfoot > tr:hover
+{
+    background: rgba(66,244,203,0.5);
+}
+

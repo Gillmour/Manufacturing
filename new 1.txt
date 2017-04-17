@@ -1,0 +1,94 @@
+mb_internal_encoding('UTF-8');
+
+if ($_POST) {
+    $dcNumber = trim($_POST['dcNumber']);
+    $dcNumber = str_replace('!', '', $dcNumber);
+    $dcPieces = trim($_POST ['dcPieces']);
+    $dcPieces= str_replace('!', '', $dcPieces);
+    $selectedDcMachine=(int)$_POST['dcMachine'];
+    $selectedDcWorkers=(int)$_POST['dcWorkers'];
+    $dcDescription=$_POST['dcDescription'];
+    $dcMold=$_POST['dcMold'];
+	
+	// echo '<pre>'.print_r($dcWorkers, true).'</pre>';
+	// echo '<pre>'.print_r($dcPieces, true).'</pre>';
+	    // $selectedMachine=(int)$_POST['dcMachine'];
+	// echo $selectedMachine;
+    $error=false;
+
+    if(!array_key_exists($selectedDcWorkers, $dcWorkers)) {
+        echo '<p>Няма такава лейка<p>';
+        $error=true;
+    }
+	
+    if(mb_strlen($dcNumber)<6 || mb_strlen($dcNumber)>8) {
+        echo '<p>Грешен номер на детайл<p>';
+        $error=true;
+    }
+    if($dcPieces<0 || $dcPieces>2000) {
+        echo '<p>Лъжеш в бройките!!! <p>';
+        $error=true;
+    }
+    if(!array_key_exists($selectedDcMachine, $dcMachine)) {
+        echo '<p>Няма такава машина<p>';
+        $error=true;
+    }
+    
+   // '<pre>'.print_r($error, true).'</pre>';
+    
+    if (!$error){
+        $result = $dcNumber.'!'.$dcMold.'!'.$dcDescription.'!'.$dcPieces.'!'.$selectedDcMachine.'!'.$selectedDcWorkers."\n";
+        // echo $result;
+        
+        $sql = 'INSERT INTO diecasting (rtNumber) VALUES("'.$dcNumber.'")';
+        echo $sql;
+        exit;
+                if (mysqli_query($connection, $sql)){
+                    echo 'OK';    
+                    }
+                else {
+                    echo 'Error';
+                }
+        //if(file_put_contents('data.txt', $result, FILE_APPEND))
+        {
+           // echo '$dcWorkers';
+        }
+    }
+}
+// echo $dcWorkers;
+
+// echo '<pre>'.print_r($_POST, true).'</pre>';
+// echo '<pre>'.print_r($dcWorkers, true).'</pre>';
+
+?>
+   <form method="POST">
+       <div id="title">Отчет на произведените отливки</div>
+       
+    <span class="span">Номер детайл: <input type="text" name="dcNumber" /></span>
+    <span class="span">Пресформа: <input type="text" name="dcMold" /></span>
+    <span class="span">Описание: <input type="text" name="dcDescription" /></span>
+    <div><span class="span">Броя: <input type="text" name="dcPieces" /></span></div>
+    
+    <span class="span">
+        <select name="dcMachine">
+            <?php
+                foreach ($dcMachine as $key=>$value) {
+                    echo '<option value="'.$key.'">'.$value.'</option>';
+                }
+            ?>
+        </select>
+    
+    </span>
+            <span class="span">
+            <select name="dcWorkers">
+                <?php
+                    foreach ($dcWorkers as $key1=>$value1) {
+                        echo '<option value="'.$key1.'">'.$value1.'</option>';
+                    }
+                 echo '<pre>'.print_r($key1, true).'</pre>'
+                ?>
+            </select>
+            </span>
+    
+    <div><input type="submit" value="Добави" /></div>
+   </form>
